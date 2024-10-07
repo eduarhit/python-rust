@@ -1,0 +1,11 @@
+services:
+  dev:
+    build:
+      context: .
+#    image: rust-python
+      args:
+        CURRENT_USER: $USER
+        CURRENT_ID: $UID
+    volumes:
+      - ./:/home/$USER/test-framework
+    working_dir: /home/$USER/test-framework
